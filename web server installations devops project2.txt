@@ -1,0 +1,44 @@
+/*WEB SERVERS INSTALLATIONS*/
+*1)APACHE INSTALL ON UBUNTU
+COMMANDS:
+sudo -i
+apt update -y
+apt install apache2 -y
+systemctl restart apache2.service
+systemctl status apache2.service
+cd /var/www/html
+touch index.html
+<h1>MY NAME IS VAMSI KUMAR</h1>
+<h2>MY COURSE IS DEVOPS WITH AWS</h2>
+esc:wq
+goto browser and paste public -ip:80
+
+*2)NGINX:on AMAZON LINUX 2
+sudo -i
+sudo yum update -y
+sudo amazon-linux-extras install epel -y
+yum install nginx -y
+nginx -v
+sudo vim /etc/yum.repos.d/nginx.repo
+
+[nginx]
+name=nginx repo
+baseurl=https://nginx.org/packages/mainline/centos/7/$basearch/
+gpgcheck=0
+enabled=1
+esc:wq
+baseurl=https://nginx.org/packages/mainline/centos/7/$basearch/
+systemctl restart nginx.service
+systemctl status nginx.service
+curl localhost:80
+
+*3)IIS INSTALLATION ON WINDOWS SERVER 2012 R2 BASE*
+COMMANDS:
+1)EC2 instance lunch->windows 2012->us-east-1a->30gb->alltrafic->ELB1->create lunch security key->windows->lunch-connect 1st instance->RDS client(Download remote desktop file)->GET Password->Browse (windows.pem)(upload)->Decrept passwd->copy passwd->goto download click ec2->remote desktop connection->connect->paste passwd->click tick and yes->its open a new windows->click server manager->click 2nd role based and fetures->click next next next->select web sever (IIS)->add fetures->next->next->install->close->goto desktop click my pc->local disk c->inetpub->wwwroot->delete files->create txt file open->enter data()
+hi everyone
+<h1>MY NAME IS VAMSI KUMAR</h1>
+<h2>MY BRANCH IS ECE</h2>
+<h3>now iam completed in devops course</h3>
+->save as (index.html)(all files)->delete txt file->its only html file->close
+
+goto browser and paste public -ip (checks file works)
